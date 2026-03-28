@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maison-joelle.vercel.app/sitemap.xml

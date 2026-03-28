@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --obsidian: #0A0808;
+  --gold: #C9A96E;
+  --gold-light: #E2CC9A;
+  --gold-dark: #A88A50;
+  --ivory: #F5F0E8;
+  --ivory-dark: #E8DFD0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--obsidian);
+  color: var(--ivory);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--obsidian);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-dark);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Selection */
+::selection {
+  background: rgba(201, 169, 110, 0.3);
+  color: var(--ivory);
+}
+
+/* Utility classes */
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.text-ivory {
+  color: var(--ivory);
+}
+
+.bg-obsidian {
+  background-color: var(--obsidian);
+}
+
+/* Gold divider line */
+.gold-line {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* Grain overlay for sections */
+.grain-overlay {
+  position: relative;
+}
+.grain-overlay::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-gold text-obsidian font-medium tracking-widest uppercase text-xs px-8 py-4 transition-all duration-300 hover:bg-gold-light;
+}
+
+.btn-ghost {
+  @apply border border-gold text-gold font-medium tracking-widest uppercase text-xs px-8 py-4 transition-all duration-300 hover:bg-gold hover:text-obsidian;
+}
+
+/* Section titles */
+.section-label {
+  @apply text-gold font-sans text-xs tracking-[0.3em] uppercase;
+}
+
+/* Smooth image load */
+img {
+  transition: opacity 0.3s ease;
+}
+
+/* Focus styles */
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--gold) !important;
+}
