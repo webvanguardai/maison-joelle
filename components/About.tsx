@@ -22,7 +22,7 @@ export default function About() {
             {/* Main image */}
             <div className="relative h-[550px] overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1573408301185-9519f94316a5?w=900&q=85"
+                src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=900&q=85"
                 alt="Jewelry artisan at work in the atelier"
                 fill
                 className="object-cover"
